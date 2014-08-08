@@ -169,7 +169,7 @@ namespace AutoMapper.Mappers
 
 			protected virtual void AssignValue(PropertyMap propertyMap, object mappedObject, object propertyValueToAssign)
 			{
-				if (propertyMap.CanBeSet)
+				if (!propertyMap.UseDestinationValue && propertyMap.CanBeSet)
 					propertyMap.DestinationProperty.SetValue(mappedObject, propertyValueToAssign);
 			}
 
